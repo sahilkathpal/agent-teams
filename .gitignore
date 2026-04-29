@@ -1,0 +1,8 @@
+node_modules/
+dist/
+data/measurement.db
+data/runs/
+data/meta-memory.json
+.env
+*.db-journal
+*.db-wal

@@ -1,0 +1,26 @@
+{
+  "name": "agent-teams",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/runner.ts",
+    "score": "tsx src/cli/score.ts",
+    "meta": "tsx src/cli/meta.ts",
+    "proposals": "tsx src/cli/proposals.ts",
+    "versions": "tsx src/cli/versions.ts",
+    "insights": "tsx src/cli/insights.ts",
+    "build": "tsc --noEmit"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "dotenv": "^16.4.7",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
