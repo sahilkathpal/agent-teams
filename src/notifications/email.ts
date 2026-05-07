@@ -42,7 +42,7 @@ function renderProposalHtml(output: MetaAgentOutput, scorecard?: CitationScoreca
     sections.push(`
       <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
         <h2 style="font-size: 14px; margin: 0 0 4px 0; color: #475569;">GEO Scorecard</h2>
-        <p style="font-size: 12px; color: #94a3b8; margin: 0 0 12px 0;">How often AI search engines (ChatGPT, Perplexity, Google AI) cite our content. Coverage = % of tracked queries where we appear. SOV = our share of all citations, weighted by position. Stars = articles getting cited. Orphans = published but not cited.</p>
+        <p style="font-size: 12px; color: #94a3b8; margin: 0 0 12px 0;">Coverage = % of tracked queries where we're cited. SOV = our share of all citations, weighted by position. Stars = articles cited. Orphans = published but not cited.</p>
         <table style="width: 100%; font-size: 14px; border-collapse: collapse;">
           <tr>
             <td style="padding: 4px 0; color: #64748b;">Coverage</td>
@@ -82,7 +82,6 @@ function renderProposalHtml(output: MetaAgentOutput, scorecard?: CitationScoreca
   // Proposals
   if (output.proposals.length > 0) {
     sections.push(`<h2 style="font-size: 16px; margin-top: 24px;">Proposals (${output.proposals.length})</h2>`);
-    sections.push(`<p style="font-size: 13px; color: #6b7280; margin: 4px 0 12px 0;">The meta-agent recommends changes to agent prompts based on citation performance data. Each proposal requires human approval before it's applied.</p>`);
 
     for (const p of output.proposals) {
       const impact = Object.entries(p.expected_impact)
@@ -93,7 +92,7 @@ function renderProposalHtml(output: MetaAgentOutput, scorecard?: CitationScoreca
         <div style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
           <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
             <strong>${esc(p.proposal_id)}</strong>
-            <span style="color: ${confidenceColor(p.confidence)}; font-weight: 600; font-size: 13px;">${esc(p.confidence)}</span>
+            <span style="color: ${confidenceColor(p.confidence)}; font-weight: 600; font-size: 13px;">${esc(p.confidence)} confidence</span>
           </div>
           <p style="margin: 4px 0; font-size: 13px; color: #6b7280;">Agent: <strong>${esc(p.agent)}</strong></p>
           <p style="margin: 8px 0;"><strong>Change:</strong> ${esc(p.proposed_change)}</p>
@@ -108,56 +107,37 @@ function renderProposalHtml(output: MetaAgentOutput, scorecard?: CitationScoreca
     }
   }
 
-  // Learnings & Analysis
+  // Learnings — flat list, one line per item
   const mu = output.memory_updates;
-  const hasInsights = mu.add_insights.length > 0 || mu.update_insights.length > 0 || mu.retire_insights.length > 0;
-  const hasHypotheses = mu.add_hypotheses.length > 0 || mu.hypothesis_results.length > 0;
+  const learningLines: string[] = [];
 
-  if (hasInsights || hasHypotheses) {
+  for (const i of mu.add_insights) {
+    const pct = Math.round(i.confidence * 100);
+    learningLines.push(`<li style="margin-bottom: 6px;"><span style="color: #16a34a; font-size: 12px; font-weight: 600;">[new]</span> "${esc(i.claim)}" <span style="color: #6b7280; font-size: 12px;">(${pct}%)</span></li>`);
+  }
+
+  for (const i of mu.update_insights) {
+    const newPct = Math.round(i.new_confidence * 100);
+    learningLines.push(`<li style="margin-bottom: 6px;"><span style="color: #ca8a04; font-size: 12px; font-weight: 600;">[updated]</span> "${esc(i.claim)}" <span style="color: #6b7280; font-size: 12px;">→ ${newPct}%</span></li>`);
+  }
+
+  for (const i of mu.retire_insights) {
+    learningLines.push(`<li style="margin-bottom: 6px; color: #9ca3af;"><s>"${esc(i.claim)}"</s> <span style="font-size: 12px;">— retired</span></li>`);
+  }
+
+  for (const h of mu.hypothesis_results) {
+    const icon = h.result === "confirmed" ? "&#x2705;" : h.result === "rejected" ? "&#x274C;" : "&#x2753;";
+    const label = h.result === "confirmed" ? "confirmed" : h.result === "rejected" ? "rejected" : "inconclusive";
+    learningLines.push(`<li style="margin-bottom: 6px;">${icon} "${esc(h.hypothesis)}" — ${label} &middot; <span style="color: #6b7280; font-size: 13px;">${esc(h.evidence)}</span></li>`);
+  }
+
+  for (const h of mu.add_hypotheses) {
+    learningLines.push(`<li style="margin-bottom: 6px;">&#x1F52C; "${esc(h.hypothesis)}" <span style="color: #6b7280; font-size: 12px;">— under test (${h.cycles_needed} cycles)</span></li>`);
+  }
+
+  if (learningLines.length > 0) {
     sections.push(`<h2 style="font-size: 16px; margin-top: 24px;">Learnings</h2>`);
-
-    if (mu.add_insights.length > 0) {
-      sections.push(`<h3 style="font-size: 14px;">New Insights</h3><ul style="padding-left: 20px;">`);
-      for (const i of mu.add_insights) {
-        const pct = Math.round(i.confidence * 100);
-        sections.push(`<li style="margin-bottom: 8px;"><strong>${esc(i.claim)}</strong> <span style="color: #6b7280; font-size: 12px;">(${pct}% confidence)</span><br><span style="font-size: 13px;">${esc(i.evidence)}</span></li>`);
-      }
-      sections.push(`</ul>`);
-    }
-
-    if (mu.update_insights.length > 0) {
-      sections.push(`<h3 style="font-size: 14px;">Updated Insights</h3><ul style="padding-left: 20px;">`);
-      for (const i of mu.update_insights) {
-        const pct = Math.round(i.new_confidence * 100);
-        sections.push(`<li style="margin-bottom: 8px;"><strong>${esc(i.claim)}</strong> → ${pct}% confidence${i.new_evidence ? `<br><span style="font-size: 13px;">${esc(i.new_evidence)}</span>` : ""}</li>`);
-      }
-      sections.push(`</ul>`);
-    }
-
-    if (mu.retire_insights.length > 0) {
-      sections.push(`<h3 style="font-size: 14px; color: #6b7280;">Retired Insights</h3><ul style="padding-left: 20px;">`);
-      for (const i of mu.retire_insights) {
-        sections.push(`<li style="margin-bottom: 8px;"><s>${esc(i.claim)}</s><br><span style="font-size: 13px;">${esc(i.reason)}</span></li>`);
-      }
-      sections.push(`</ul>`);
-    }
-
-    if (mu.hypothesis_results.length > 0) {
-      sections.push(`<h3 style="font-size: 14px;">Hypothesis Results</h3><ul style="padding-left: 20px;">`);
-      for (const h of mu.hypothesis_results) {
-        const icon = h.result === "confirmed" ? "&#x2705;" : h.result === "rejected" ? "&#x274C;" : "&#x2753;";
-        sections.push(`<li style="margin-bottom: 8px;">${icon} <strong>${esc(h.hypothesis)}</strong> — <em>${esc(h.result)}</em><br><span style="font-size: 13px;">${esc(h.evidence)}</span></li>`);
-      }
-      sections.push(`</ul>`);
-    }
-
-    if (mu.add_hypotheses.length > 0) {
-      sections.push(`<h3 style="font-size: 14px;">New Hypotheses Under Test</h3><ul style="padding-left: 20px;">`);
-      for (const h of mu.add_hypotheses) {
-        sections.push(`<li style="margin-bottom: 8px;"><strong>${esc(h.hypothesis)}</strong><br><span style="font-size: 13px; color: #6b7280;">Test: ${esc(h.test_criteria)} (${h.cycles_needed} cycles)</span></li>`);
-      }
-      sections.push(`</ul>`);
-    }
+    sections.push(`<ul style="padding-left: 20px; font-size: 14px;">${learningLines.join("\n")}</ul>`);
   }
 
   // Prompt Curation
@@ -166,33 +146,23 @@ function renderProposalHtml(output: MetaAgentOutput, scorecard?: CitationScoreca
   const hasReclusters = output.prompt_updates.recluster.length > 0;
 
   if (hasAdds || hasRetires || hasReclusters) {
+    const promptLines: string[] = [];
+
+    for (const p of output.prompt_updates.add) {
+      promptLines.push(`<li style="margin-bottom: 6px;"><span style="color: #16a34a; font-weight: 600;">+</span> "${esc(p.prompt)}" <span style="color: #6b7280; font-size: 12px;">[${esc(p.cluster)}]</span> &middot; <span style="font-size: 13px; color: #4b5563;">${esc(p.reason)}</span></li>`);
+    }
+
+    for (const p of output.prompt_updates.retire) {
+      promptLines.push(`<li style="margin-bottom: 6px;"><span style="color: #dc2626; font-weight: 600;">−</span> <s>"${esc(p.prompt)}"</s> &middot; <span style="font-size: 13px; color: #4b5563;">${esc(p.reason)}</span></li>`);
+    }
+
+    for (const p of output.prompt_updates.recluster) {
+      promptLines.push(`<li style="margin-bottom: 6px;"><span style="color: #ca8a04; font-weight: 600;">→</span> "${esc(p.prompt)}" <span style="color: #6b7280; font-size: 12px;">${esc(p.from_cluster ?? "(none)")} → ${esc(p.to_cluster)}</span> &middot; <span style="font-size: 13px; color: #4b5563;">${esc(p.reason)}</span></li>`);
+    }
+
     sections.push(`<h2 style="font-size: 16px; margin-top: 24px;">Prompt Curation</h2>`);
-    sections.push(`<p style="font-size: 13px; color: #6b7280; margin: 4px 0 12px 0;">We track up to ${process.env.MAX_TRACKED_PROMPTS ?? 15} prompts on Otterly to measure which AI search queries cite our content. Clusters group related prompts so we can track performance by topic area (e.g. "mobile-access", "competitive") rather than per-prompt.</p>`);
-
-    if (hasAdds) {
-      sections.push(`<h3 style="font-size: 14px; color: #16a34a;">Add (${output.prompt_updates.add.length})</h3><ul style="padding-left: 20px;">`);
-      for (const p of output.prompt_updates.add) {
-        sections.push(`<li style="margin-bottom: 8px;"><strong>"${esc(p.prompt)}"</strong><br><span style="font-size: 13px; color: #6b7280;">Cluster: ${esc(p.cluster)} &middot; Source: ${esc(p.source)} &middot; Volume: ${esc(p.expected_volume)}</span><br><span style="font-size: 13px;">${esc(p.reason)}</span></li>`);
-      }
-      sections.push(`</ul>`);
-    }
-
-    if (hasRetires) {
-      sections.push(`<h3 style="font-size: 14px; color: #dc2626;">Retire (${output.prompt_updates.retire.length})</h3><ul style="padding-left: 20px;">`);
-      for (const p of output.prompt_updates.retire) {
-        sections.push(`<li style="margin-bottom: 8px;"><strong>"${esc(p.prompt)}"</strong><br><span style="font-size: 13px;">${esc(p.reason)}</span></li>`);
-      }
-      sections.push(`</ul>`);
-    }
-
-    if (hasReclusters) {
-      sections.push(`<h3 style="font-size: 14px; color: #ca8a04;">Recluster (${output.prompt_updates.recluster.length})</h3><ul style="padding-left: 20px;">`);
-      for (const p of output.prompt_updates.recluster) {
-        sections.push(`<li style="margin-bottom: 8px;"><strong>"${esc(p.prompt)}"</strong>: ${esc(p.from_cluster ?? "(none)")} → ${esc(p.to_cluster)}<br><span style="font-size: 13px;">${esc(p.reason)}</span></li>`);
-      }
-      sections.push(`</ul>`);
-    }
-
+    sections.push(`<p style="font-size: 13px; color: #6b7280; margin: 4px 0 12px 0;">Queries tracked on Otterly to measure AI citation rate. Clusters group related queries by topic (e.g. "mobile-access", "competitive").</p>`);
+    sections.push(`<ul style="padding-left: 20px; font-size: 14px;">${promptLines.join("\n")}</ul>`);
     sections.push(`
       <div style="background: #f3f4f6; border-radius: 4px; padding: 8px 12px; margin-top: 12px; font-family: monospace; font-size: 12px;">
         npm run proposals -- --apply-prompts
@@ -299,8 +269,7 @@ function renderPipelineHtml(report: PipelineReport): string {
 
     sections.push(`
       <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
-        <h2 style="font-size: 14px; margin: 0 0 4px 0; color: #475569;">GEO Scorecard</h2>
-        <p style="font-size: 12px; color: #94a3b8; margin: 0 0 12px 0;">How often AI search engines (ChatGPT, Perplexity, Google AI) cite our content. Coverage = % of tracked queries where we appear. SOV = our share of all citations, weighted by position. Stars = articles getting cited. Orphans = published but not cited.</p>
+        <h2 style="font-size: 14px; margin: 0 0 12px 0; color: #475569;">GEO Scorecard</h2>
         <table style="width: 100%; font-size: 14px; border-collapse: collapse;">
           <tr><td style="padding: 4px 0; color: #64748b;">Coverage</td><td style="padding: 4px 0; text-align: right; font-weight: 600;">${sc.citation_coverage_pct}% <span style="font-weight: 400; color: #94a3b8;">(${sc.prompts_tracked} prompts)</span></td></tr>
           <tr><td style="padding: 4px 0; color: #64748b;">Share of Voice</td><td style="padding: 4px 0; text-align: right; font-weight: 600;">${sc.position_weighted_sov}%</td></tr>
