@@ -405,9 +405,11 @@ function renderPipelineHtml(report: PipelineReport): string {
 
 export async function sendPipelineReport(report: PipelineReport): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.NOTIFY_EMAIL;
+  const toRaw = process.env.NOTIFY_EMAIL;
 
-  if (!apiKey || !to) return;
+  if (!apiKey || !toRaw) return;
+
+  const to = toRaw.split(",").map((e) => e.trim()).filter(Boolean);
 
   const from = process.env.NOTIFY_FROM ?? "onboarding@resend.dev";
   const resend = new Resend(apiKey);
@@ -426,11 +428,13 @@ export async function sendPipelineReport(report: PipelineReport): Promise<void> 
 
 export async function sendProposalEmail(output: MetaAgentOutput, scorecard?: CitationScorecard): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.NOTIFY_EMAIL;
+  const toRaw = process.env.NOTIFY_EMAIL;
 
-  if (!apiKey || !to) {
+  if (!apiKey || !toRaw) {
     return;
   }
+
+  const to = toRaw.split(",").map((e) => e.trim()).filter(Boolean);
 
   const from = process.env.NOTIFY_FROM ?? "onboarding@resend.dev";
   const resend = new Resend(apiKey);
