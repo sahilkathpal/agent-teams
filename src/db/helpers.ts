@@ -106,11 +106,12 @@ export function upsertArticle(opts: {
   published_at: string;
   format?: string;
   geo_targets?: string[];
+  status?: "draft" | "published";
 }): void {
   const db = getDb();
   db.prepare(`
-    INSERT OR REPLACE INTO articles (slug, url, title, published_at, format, geo_targets)
-    VALUES (?, ?, ?, ?, ?, ?)
+    INSERT OR REPLACE INTO articles (slug, url, title, published_at, format, geo_targets, status)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
   `).run(
     opts.slug,
     opts.url,
@@ -118,6 +119,7 @@ export function upsertArticle(opts: {
     opts.published_at,
     opts.format ?? null,
     JSON.stringify(opts.geo_targets ?? []),
+    opts.status ?? "published",
   );
 }
 

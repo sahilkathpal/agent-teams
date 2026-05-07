@@ -3,6 +3,8 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { enqueue } from "./syndication/queue.js";
+import { getDb } from "./db/helpers.js";
+import { initDb } from "./db/schema.js";
 import type { ContentDraft } from "./models/content-draft.js";
 import "dotenv/config";
 
@@ -163,6 +165,18 @@ async function handleRequest(req: IncomingMessage, res: ServerResponse): Promise
 
   console.log(`[webhook] post.published: ${ghostPostId} → ${ghostPostUrl}`);
 
+  // Update article status in DB
+  try {
+    const db = getDb();
+    const slug = String(post.slug);
+    const publishedAt = String(post.published_at ?? new Date().toISOString());
+    db.prepare(`UPDATE articles SET status = 'published', published_at = ?, url = ? WHERE slug = ?`)
+      .run(publishedAt, ghostPostUrl, slug);
+    console.log(`[webhook] marked "${slug}" as published`);
+  } catch (err) {
+    console.error(`[webhook] status update failed: ${err instanceof Error ? err.message : String(err)}`);
+  }
+
   // Dedup: already processing
   if (inFlight.has(ghostPostId)) {
     res.writeHead(200).end(JSON.stringify({ status: "in_progress" }));
@@ -233,6 +247,8 @@ async function handleRequest(req: IncomingMessage, res: ServerResponse): Promise
 }
 
 // ── Server ──────────────────────────────────────────────────────
+
+initDb();
 
 const server = createServer(async (req, res) => {
   try {

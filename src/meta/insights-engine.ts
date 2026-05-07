@@ -230,7 +230,7 @@ export function overview(): OverviewData {
   const memory = loadMemory();
 
   const promptCount = (db.prepare("SELECT COUNT(*) as n FROM prompts").get() as { n: number }).n;
-  const articleCount = (db.prepare("SELECT COUNT(*) as n FROM articles").get() as { n: number }).n;
+  const articleCount = (db.prepare("SELECT COUNT(*) as n FROM articles WHERE status = 'published'").get() as { n: number }).n;
   const citationCount = (db.prepare("SELECT COUNT(*) as n FROM citations").get() as { n: number }).n;
 
   const latest = db.prepare(

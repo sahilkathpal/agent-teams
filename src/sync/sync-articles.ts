@@ -55,6 +55,7 @@ export async function syncArticles(): Promise<number> {
         published_at: post.published_at,
         format: existing?.format ?? undefined,
         geo_targets: existing?.geo_targets ? JSON.parse(existing.geo_targets) : undefined,
+        status: "published",
       });
       synced++;
     }

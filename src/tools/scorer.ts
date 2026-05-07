@@ -112,7 +112,7 @@ export async function runScorer(): Promise<CitationScorecard> {
 
   // ── 7. GEO Quadrant ──────────────────────────────────────────────
 
-  const articles = db.prepare("SELECT slug, url FROM articles").all() as Array<{ slug: string; url: string }>;
+  const articles = db.prepare("SELECT slug, url FROM articles WHERE status = 'published'").all() as Array<{ slug: string; url: string }>;
   const geoQuadrant: GeoQuadrant[] = [];
 
   for (const article of articles) {

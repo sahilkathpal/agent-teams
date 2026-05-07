@@ -117,5 +117,10 @@ export function initDb(dbPath?: string): Database.Database {
     CREATE INDEX IF NOT EXISTS idx_proposals_status ON proposals(status);
   `);
 
+  // Migration: add status column to articles
+  try {
+    db.exec(`ALTER TABLE articles ADD COLUMN status TEXT NOT NULL DEFAULT 'published'`);
+  } catch { /* column already exists */ }
+
   return db;
 }

@@ -174,6 +174,7 @@ async function createNewDraft(
     published_at: new Date().toISOString(),
     format: opts.draft.format,
     geo_targets: opts.draft.geo_targets,
+    status: "draft",
   });
 
   console.log(`  Draft created: ${post.url}`);
@@ -255,6 +256,7 @@ async function updateExistingPost(
     published_at: new Date().toISOString(),
     format: opts.draft.format,
     geo_targets: opts.draft.geo_targets,
+    status: "published",
   });
 
   console.log(`  Post updated in-place: ${post.url}`);
