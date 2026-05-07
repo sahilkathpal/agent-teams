@@ -41,7 +41,8 @@ function renderProposalHtml(output: MetaAgentOutput, scorecard?: CitationScoreca
 
     sections.push(`
       <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
-        <h2 style="font-size: 14px; margin: 0 0 12px 0; color: #475569;">GEO Scorecard</h2>
+        <h2 style="font-size: 14px; margin: 0 0 4px 0; color: #475569;">GEO Scorecard</h2>
+        <p style="font-size: 12px; color: #94a3b8; margin: 0 0 12px 0;">How often AI search engines (ChatGPT, Perplexity, Google AI) cite our content. Coverage = % of tracked queries where we appear. SOV = our share of all citations, weighted by position. Stars = articles getting cited. Orphans = published but not cited.</p>
         <table style="width: 100%; font-size: 14px; border-collapse: collapse;">
           <tr>
             <td style="padding: 4px 0; color: #64748b;">Coverage</td>
@@ -81,6 +82,7 @@ function renderProposalHtml(output: MetaAgentOutput, scorecard?: CitationScoreca
   // Proposals
   if (output.proposals.length > 0) {
     sections.push(`<h2 style="font-size: 16px; margin-top: 24px;">Proposals (${output.proposals.length})</h2>`);
+    sections.push(`<p style="font-size: 13px; color: #6b7280; margin: 4px 0 12px 0;">The meta-agent recommends changes to agent prompts based on citation performance data. Each proposal requires human approval before it's applied.</p>`);
 
     for (const p of output.proposals) {
       const impact = Object.entries(p.expected_impact)
@@ -165,6 +167,7 @@ function renderProposalHtml(output: MetaAgentOutput, scorecard?: CitationScoreca
 
   if (hasAdds || hasRetires || hasReclusters) {
     sections.push(`<h2 style="font-size: 16px; margin-top: 24px;">Prompt Curation</h2>`);
+    sections.push(`<p style="font-size: 13px; color: #6b7280; margin: 4px 0 12px 0;">We track up to ${process.env.MAX_TRACKED_PROMPTS ?? 15} prompts on Otterly to measure which AI search queries cite our content. Clusters group related prompts so we can track performance by topic area (e.g. "mobile-access", "competitive") rather than per-prompt.</p>`);
 
     if (hasAdds) {
       sections.push(`<h3 style="font-size: 14px; color: #16a34a;">Add (${output.prompt_updates.add.length})</h3><ul style="padding-left: 20px;">`);
@@ -296,7 +299,8 @@ function renderPipelineHtml(report: PipelineReport): string {
 
     sections.push(`
       <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
-        <h2 style="font-size: 14px; margin: 0 0 12px 0; color: #475569;">GEO Scorecard</h2>
+        <h2 style="font-size: 14px; margin: 0 0 4px 0; color: #475569;">GEO Scorecard</h2>
+        <p style="font-size: 12px; color: #94a3b8; margin: 0 0 12px 0;">How often AI search engines (ChatGPT, Perplexity, Google AI) cite our content. Coverage = % of tracked queries where we appear. SOV = our share of all citations, weighted by position. Stars = articles getting cited. Orphans = published but not cited.</p>
         <table style="width: 100%; font-size: 14px; border-collapse: collapse;">
           <tr><td style="padding: 4px 0; color: #64748b;">Coverage</td><td style="padding: 4px 0; text-align: right; font-weight: 600;">${sc.citation_coverage_pct}% <span style="font-weight: 400; color: #94a3b8;">(${sc.prompts_tracked} prompts)</span></td></tr>
           <tr><td style="padding: 4px 0; color: #64748b;">Share of Voice</td><td style="padding: 4px 0; text-align: right; font-weight: 600;">${sc.position_weighted_sov}%</td></tr>
