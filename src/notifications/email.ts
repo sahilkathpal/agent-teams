@@ -420,7 +420,12 @@ export async function sendPipelineReport(report: PipelineReport): Promise<void> 
   const html = renderPipelineHtml(report);
 
   const articleCount = report.creator_summary?.articles.length ?? 0;
-  const subject = `[Agent Teams] Run complete — ${articleCount} article(s), $${report.total_cost_usd.toFixed(2)} — ${report.run_id}`;
+  const partial = report.stage_failures.length > 0;
+  const articleLabel = articleCount === 1 ? "1 article" : `${articleCount} articles`;
+  const costLabel = `$${report.total_cost_usd.toFixed(2)} spent`;
+  const subject = articleCount > 0
+    ? `[GEO team] ${articleLabel} published · ${costLabel}${partial ? " · partial" : ""}`
+    : `[GEO team] Partial run · ${costLabel}`;
 
   try {
     await resend.emails.send({ from, to, subject, html });
@@ -444,16 +449,17 @@ export async function sendProposalEmail(output: MetaAgentOutput, scorecard?: Cit
   const resend = new Resend(apiKey);
   const html = renderProposalHtml(output, scorecard);
 
+  const pl = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
   const parts: string[] = [];
-  if (output.proposals.length > 0) parts.push(`${output.proposals.length} proposal(s)`);
-  if (output.prompt_updates.add.length > 0) parts.push(`${output.prompt_updates.add.length} prompt add(s)`);
-  if (output.prompt_updates.retire.length > 0) parts.push(`${output.prompt_updates.retire.length} retire(s)`);
+  if (output.proposals.length > 0) parts.push(pl(output.proposals.length, "proposal"));
+  if (output.prompt_updates.add.length > 0) parts.push(pl(output.prompt_updates.add.length, "new prompt"));
+  if (output.prompt_updates.retire.length > 0) parts.push(pl(output.prompt_updates.retire.length, "prompt retired"));
   const insightCount = output.memory_updates.add_insights.length + output.memory_updates.update_insights.length;
-  if (insightCount > 0 && parts.length === 0) parts.push(`${insightCount} insight(s)`);
-  if (output.memory_updates.hypothesis_results.length > 0) parts.push(`${output.memory_updates.hypothesis_results.length} hypothesis result(s)`);
+  if (insightCount > 0 && parts.length === 0) parts.push(pl(insightCount, "insight"));
+  if (output.memory_updates.hypothesis_results.length > 0) parts.push(pl(output.memory_updates.hypothesis_results.length, "hypothesis result"));
   const summary = parts.length > 0 ? parts.join(", ") : "status update";
 
-  const subject = `[Agent Teams] ${summary} — ${output.run_id}`;
+  const subject = `[GEO team] ${summary}`;
 
   try {
     await resend.emails.send({ from, to, subject, html });
