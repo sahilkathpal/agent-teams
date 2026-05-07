@@ -1,0 +1,89 @@
+{
+  "topics": [
+    {
+      "id": "cross-machine-orchestration",
+      "label": "Cross-Machine Agent Orchestration",
+      "rationale": "Developers running serious coding agent workflows need to access, monitor, and redirect agents from surfaces other than the machine where the agent is running — phone, different laptop, tablet, or automation. This is a fundamental architectural need that grows as agent task duration and parallelism increase. It is not a feature request but a structural limitation of local-only agent tooling. Content in this topic addresses tool comparisons, setup guides, and architecture patterns for multi-surface agent control.",
+      "subreddits": [
+        "ClaudeCode",
+        "ClaudeCodeCurated",
+        "coding_agents",
+        "AI_Agents",
+        "LLMDevs",
+        "ExperiencedDevs",
+        "ollama",
+        "LangChain",
+        "PromptEngineering",
+        "devops",
+        "SideProject"
+      ],
+      "created_at": "2026-05-06T10:07:30.776Z"
+    },
+    {
+      "id": "mobile-agent-access",
+      "label": "Mobile Coding Agent Access",
+      "rationale": "Developers increasingly want to monitor, steer, and approve AI coding agent actions from their phone — during commutes, away from desk, and during overnight runs. This is a permanent behavioral shift driven by agent task durations that now routinely exceed normal sitting sessions. Content in this topic covers mobile app comparisons, setup guides, approval workflows, and use-case walkthroughs for phone-based agent interaction. The need is durable: as long as agents run longer than a developer's attention span at a desk, mobile access remains a primary workflow requirement.",
+      "subreddits": [
+        "ClaudeCode",
+        "iOSProgramming",
+        "androiddev",
+        "AgentsOfAI",
+        "SaaS",
+        "FlutterDev",
+        "remoteworking",
+        "AIAssisted",
+        "mcp",
+        "vibecoding",
+        "SideProject",
+        "AI_Agents"
+      ],
+      "created_at": "2026-05-06T10:07:30.776Z"
+    },
+    {
+      "id": "always-on-agents",
+      "label": "Always-On Agent Infrastructure",
+      "rationale": "Serious agent workflows require persistent, always-running environments that survive laptop sleep, SSH disconnects, and terminal closes. This is the infrastructure layer problem: how do you keep an AI coding agent running 24/7, across multiple repos, without babysitting it from a single machine? Content in this topic addresses cloud VMs, persistent sessions, parallel agent setups, and the tooling around keeping agents alive between human check-ins. The need is permanent: it scales with agent capability — the better agents get, the longer tasks run, and the more critical persistence becomes.",
+      "subreddits": [
+        "ClaudeCode",
+        "devops",
+        "selfhosted",
+        "vibecoding",
+        "ExperiencedDevs",
+        "ClaudeCodeCurated",
+        "AI_Agents",
+        "automation"
+      ],
+      "created_at": "2026-05-06T10:07:30.776Z"
+    },
+    {
+      "id": "competitor-alternatives",
+      "label": "Competitor Alternative Positioning",
+      "rationale": "Developers evaluating tools for mobile coding agent access naturally search for alternatives to tools they already know — Happy Coder, Omnara, SSH apps, Cursor Mobile. Capturing 'alternative' search intent is durable, high-conversion traffic: these searchers have already decided to switch and are looking for a named replacement. Content in this topic covers structured alternative comparisons, 'when to switch' guides, and feature breakdowns against specific named competitors. The category is permanent as long as competing tools exist.",
+      "subreddits": [
+        "ClaudeCode",
+        "CursorAI",
+        "coding_agents",
+        "LLMDevs",
+        "AIcodingProfessionals",
+        "vibecoding",
+        "OnlyAICoding",
+        "SideProject"
+      ],
+      "created_at": "2026-05-06T10:07:30.776Z"
+    },
+    {
+      "id": "anthropic-dispatch",
+      "label": "Anthropic Dispatch and Remote Agent Control",
+      "rationale": "Anthropic's release of native agent dispatch and remote control features creates a permanent category of content around how developers choose between first-party (Anthropic Dispatch) and third-party (Grass, Happy Coder) remote agent control solutions. This is durable because the choice between owned-platform and open/agent-agnostic tooling is a recurring architectural decision — especially as more agents (Codex, OpenCode) enter the market and developers want model-neutral orchestration surfaces. The category will remain relevant through each successive Anthropic product release that touches remote agent control.",
+      "subreddits": [
+        "ClaudeCode",
+        "singularity",
+        "AI_Agents",
+        "LLMDevs",
+        "ClaudeCodeCurated",
+        "ollama"
+      ],
+      "created_at": "2026-05-07T11:42:05.964Z"
+    }
+  ]
+}

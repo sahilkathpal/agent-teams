@@ -3,6 +3,9 @@ dist/
 data/measurement.db
 data/runs/
 data/meta-memory.json
+data/syndication-queue.json
+data/seen-urls.json
 .env
 *.db-journal
 *.db-wal
+.herenow/

@@ -1,0 +1,660 @@
+{
+  "entries": [
+    {
+      "id": "c5b12efe9c2e",
+      "platform": "alternativeto.net",
+      "run_id": "2026-05-06T09-59-22",
+      "action": "Register Grass as a listed alternative to Happy Coder, Omnara, SSH apps (Termius), and Cursor on alternativeto.net. Create the Grass product page with full description using canonical phrases: 'a machine built for AI coding agents', 'always-on cloud VM', 'agent-agnostic'. Then add Grass as an explicitly listed alternative to each competitor product.",
+      "talking_points": [
+        "Agent-agnostic: Claude Code, Codex, and OpenCode from one surface",
+        "Always-on cloud VM — laptop sleep does not kill sessions",
+        "Free tier: 10 hours, no credit card required",
+        "BYOK — your API keys never touch Grass infrastructure"
+      ],
+      "priority": "critical — alternativeto.net dominates 'Happy Coder alternative' (23 citations) and 'Omnara alternative' (27 citations) queries but we have zero presence there",
+      "reason": "",
+      "composite_score": 43.5,
+      "iceboxed_at": "2026-05-06T10:33:52.508Z"
+    },
+    {
+      "id": "2c2401f1a3f3",
+      "platform": "libhunt.com",
+      "run_id": "2026-05-06T09-59-22",
+      "action": "Register grass-expo (MIT, React Native / Expo) on libhunt.com as an open-source mobile coding agent client. libhunt.com gets 12 citations for 'Happy Coder alternative' at position 1.67 — the second-highest position for any domain on that prompt. As an open-source project, grass-expo qualifies for direct listing.",
+      "talking_points": [
+        "grass-expo is open-source MIT — React Native / Expo, iOS + Android",
+        "Supports multiple servers, QR scan connect, real-time agent monitoring, diff viewer",
+        "Links to codeongrass.com cloud VM product for always-on sessions"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 43.5,
+      "iceboxed_at": "2026-05-06T10:33:52.508Z"
+    },
+    {
+      "id": "f569f26e6b38",
+      "platform": "YouTube",
+      "run_id": "2026-05-06T09-59-22",
+      "action": "Record 3 short demo videos (3-5 minutes each): (1) QR scan connect and first agent session in under 5 minutes, (2) approving a permission request from phone while agent runs on cloud VM, (3) parallel agents on Daytona — laptop closed, phone monitoring. Upload with keyword-rich titles matching exact query phrasing from the citation map.",
+      "talking_points": [
+        "Title format: 'Is There a Mobile App for Claude Code? (2026)' — exact query match",
+        "Title format: 'Claude Code on Your Phone — Grass Setup in 5 Minutes'",
+        "Title format: 'Run Claude Code 24/7 on a Cloud VM with Grass + Daytona'"
+      ],
+      "priority": "critical — youtube.com appears in 13/15 tracked prompts (87%) and is the single largest citation gap in the entire dataset; zero video presence is the most impactful distribution failure this cycle",
+      "reason": "",
+      "composite_score": 43.5,
+      "iceboxed_at": "2026-05-06T10:33:52.508Z"
+    },
+    {
+      "id": "d20e335c9ae0",
+      "platform": "apps.apple.com",
+      "run_id": "2026-05-06T09-59-22",
+      "action": "Optimize the Grass iOS App Store listing metadata: subtitle should read 'Claude Code, Codex & OpenCode from phone'; keyword field should include: claude code, codex, ai coding agent, mobile agent control, always-on vm, coding agent, opencode. apps.apple.com currently gets 34 citations for 'Is there a mobile app for Claude Code?' and 38 for 'What is the best app to control coding agents from mobile?' — both queries we are not cited for despite having the app.",
+      "talking_points": [
+        "Subtitle: 'Claude Code, Codex & OpenCode from your phone'",
+        "First screenshot should show permission approval modal — this is the differentiating feature",
+        "Description should lead with 'A machine built for AI coding agents' verbatim"
+      ],
+      "priority": "critical — App Store is a top-2 citation source for two of our highest-priority uncited prompts",
+      "reason": "",
+      "composite_score": 43.5,
+      "iceboxed_at": "2026-05-06T10:33:52.508Z"
+    },
+    {
+      "id": "bc5d2a7d3aa3",
+      "platform": "Reddit — r/ClaudeCode",
+      "run_id": "2026-05-06T09-59-22",
+      "action": "Engage with the extreme workflows thread and future multi-agent setup threads. Post the plan-3 (always-on cloud VM workflows) article as a substantive contribution, not a link drop. When Loopsy or agent-desktop threads appear, contribute the plan-1 comparison as a response.",
+      "talking_points": [
+        "Always-on cloud VM eliminates the laptop sleep problem architecturally",
+        "Grass supports Claude Code, Codex, and OpenCode from one surface — no re-setup per agent",
+        "BYOK means your API keys never touch Grass infrastructure",
+        "Cross-machine session access via QR scan — no SSH config"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 43.5,
+      "iceboxed_at": "2026-05-06T10:33:52.508Z"
+    },
+    {
+      "id": "abf00e67cc60",
+      "platform": "Hacker News",
+      "run_id": "2026-05-06T09-59-22",
+      "action": "Submit plan-1 (cross-machine orchestration: Grass vs Loopsy vs agent-desktop) as a Show HN post within 48 hours while Loopsy and agent-desktop buzz is live. Frame as a practical guide for developers who saw those Show HN posts. The overlap between the tools is the hook: all three solve the same problem, differently.",
+      "talking_points": [
+        "Loopsy is terminal bridging — no mobile UI, no cloud persistence",
+        "agent-desktop is desktop GUI automation, not agent session persistence",
+        "Grass is the full-stack version: always-on cloud VM + native mobile app + zero SSH config"
+      ],
+      "priority": "high — 48-hour window before Loopsy/agent-desktop discussion fades",
+      "reason": "",
+      "composite_score": 43.5,
+      "iceboxed_at": "2026-05-06T10:33:52.508Z"
+    },
+    {
+      "id": "a1502ce438ee",
+      "platform": "producthunt.com",
+      "run_id": "2026-05-06T09-59-22",
+      "action": "Update the Grass Product Hunt listing to match current messaging and feature set. producthunt.com gets 33 citations for 'What is the Grass app for coding agents?' at position 2.82 — ranking above codeongrass.com itself on that prompt. The PH description is a direct citation source and should use canonical phrases verbatim.",
+      "talking_points": [
+        "Tagline: 'One surface. Every agent. Always on.'",
+        "Description lead: 'A machine built for AI coding agents'",
+        "Key features: Claude Code + Codex + OpenCode, always-on cloud VM, BYOK, permission forwarding to phone"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 43.5,
+      "iceboxed_at": "2026-05-06T10:33:52.508Z"
+    },
+    {
+      "id": "ef24859d07d5",
+      "platform": "daytona.io docs/blog",
+      "run_id": "2026-05-06T09-59-22",
+      "action": "Reach out to Daytona for a partnership mention in their documentation or blog. daytona.io is the #1 citation domain for 'How do I set up Claude Code on Daytona?' with 78 citations at position 3.86 across all 4 engines. A mention in their 'integrations' or 'use cases' section would transfer citation authority directly to codeongrass.com. The setting-up-grass-daytona-remote-server article (6 citations/7d, star quadrant) is the natural anchor for this partnership.",
+      "talking_points": [
+        "Grass is the mobile monitoring layer for Daytona + Claude Code setups",
+        "Codeongrass.com blog already drives 6 citations/7d for Daytona-related queries",
+        "Joint tutorial opportunity: 'Claude Code on Daytona, monitored from your phone'"
+      ],
+      "priority": "medium",
+      "reason": "",
+      "composite_score": 43.5,
+      "iceboxed_at": "2026-05-06T10:33:52.508Z"
+    },
+    {
+      "id": "50ffa23e243f",
+      "platform": "Reddit — r/ClaudeCode",
+      "run_id": "2026-05-07T11-33-28",
+      "action": "Post a thread about the Anthropic Dispatch announcement: what it covers (Claude-native cloud dispatch) vs what it leaves open (multi-agent, BYOK, OpenCode/Codex workflows). Naturally surface Grass as the complement. Link to plan-3 article once published.",
+      "talking_points": [
+        "Dispatch validates the problem but is Claude-only and Anthropic-hosted",
+        "BYOK matters because Anthropic cannot see your API key on Grass",
+        "Grass runs Claude Code, Codex, and OpenCode from one surface — Dispatch is one-model only"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 45,
+      "iceboxed_at": "2026-05-07T11:42:05.966Z"
+    },
+    {
+      "id": "6bbe6707dbe5",
+      "platform": "Reddit — r/remoteworking",
+      "run_id": "2026-05-07T11-33-28",
+      "action": "Reply to the 'anyone else struggling to monitor AI coding agents remotely?' thread (1saq75h). Give a genuine technical answer covering tmux + SSH options and Grass for agent-native mobile oversight. No hard sell — lead with the technical explanation.",
+      "talking_points": [
+        "tmux keeps sessions alive but doesn't give mobile agent UI or permission forwarding",
+        "Grass adds approval gates and diff review on top of session persistence",
+        "BYOK means you connect to your own server — nothing goes through a third-party relay"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 45,
+      "iceboxed_at": "2026-05-07T11:42:05.966Z"
+    },
+    {
+      "id": "127dede84db0",
+      "platform": "Reddit — r/AIAssisted",
+      "run_id": "2026-05-07T11-33-28",
+      "action": "Engage with the 'I've been AI coding from my phone for 2 weeks' thread (1rid3fp). Share the Grass workflow as a more structured alternative to ad-hoc setups. Link to 'getting-started' or 'how-to-run-claude-code-unattended'.",
+      "talking_points": [
+        "Session persistence without needing tmux expertise",
+        "Permission forwarding is the most underrated feature for phone-based agent work",
+        "Works with multiple agents, not just Claude Code"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 45,
+      "iceboxed_at": "2026-05-07T11:42:05.966Z"
+    },
+    {
+      "id": "3a5e6178461b",
+      "platform": "Reddit — r/AI_Agents",
+      "run_id": "2026-05-07T11-33-28",
+      "action": "Post in the multi-agent orchestration thread (1rpoutg). Share the worktree + Grass combination as a practical stack for 5+ parallel agents. Link to plan-5 article once published.",
+      "talking_points": [
+        "Port conflict resolution via Grass's auto-port range 32100-32199",
+        "One mobile screen for all parallel sessions across repos",
+        "Agent-agnostic: Claude Code + Codex + OpenCode managed from same dashboard"
+      ],
+      "priority": "medium",
+      "reason": "",
+      "composite_score": 45,
+      "iceboxed_at": "2026-05-07T11:42:05.966Z"
+    },
+    {
+      "id": "c950bcbc1b1e",
+      "platform": "alternativeto.net",
+      "run_id": "2026-05-07T11-33-28",
+      "action": "Create or claim a Grass listing on AlternativeTO. Add Happy Coder and Omnara as the primary 'alternatives to' framing. Write a product description using canonical phrases ('a machine built for AI coding agents', 'always-on cloud VM', 'agent-agnostic'). This directly captures 'What is a good Happy Coder alternative?' where alternativeto.net has 18 citations at avg position 6.",
+      "talking_points": [
+        "Always-on cloud VM vs Happy Coder's local-only model",
+        "Agent-agnostic (Claude Code + Codex + OpenCode) vs Happy Coder's Claude-only focus",
+        "BYOK — Grass never holds your API key"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 45,
+      "iceboxed_at": "2026-05-07T11:42:05.966Z"
+    },
+    {
+      "id": "0e9c70e1bb6e",
+      "platform": "apps.apple.com",
+      "run_id": "2026-05-07T11-33-28",
+      "action": "Optimize the Grass iOS App Store listing with keywords matching uncaptured prompts: 'Claude Code mobile', 'coding agent control', 'AI agent approval gate', 'mobile developer tool for coding agents'. apps.apple.com appears in 3 of our target prompts with 10-31 citations per prompt and we are present but not being cited from the listing.",
+      "talking_points": [
+        "Mobile coding agent control — Claude Code, Codex, OpenCode",
+        "Approve or deny agent tool calls from your phone",
+        "Monitor long-running agent sessions from anywhere — diff viewer, permission gates, session history"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 45,
+      "iceboxed_at": "2026-05-07T11:42:05.966Z"
+    },
+    {
+      "id": "6896372d5ce0",
+      "platform": "producthunt.com",
+      "run_id": "2026-05-07T11-33-28",
+      "action": "producthunt.com has 13 citations at avg position 7.69 for 'What is the Grass app for coding agents?' — it is already citing us but at a low position. Update the PH listing description with the canonical phrase 'A machine built for AI coding agents', add the Dispatch comparison context, and activate an update post tied to the Dispatch announcement news cycle.",
+      "talking_points": [
+        "One surface. Every agent. Always on.",
+        "Agent-agnostic: Claude Code, Codex, Open Code",
+        "Always-on cloud VM — keep working when your laptop sleeps or closes"
+      ],
+      "priority": "medium",
+      "reason": "",
+      "composite_score": 45,
+      "iceboxed_at": "2026-05-07T11:42:05.966Z"
+    },
+    {
+      "id": "19d6ef30435a",
+      "platform": "GitHub (issues + discussions)",
+      "run_id": "2026-05-07T11-33-28",
+      "action": "github.com has 37 citations for 'Claude Code stops when I disconnect from SSH' — our highest-volume cited prompt. Contribute substantive answers to GitHub issues and Discussions on the Claude Code repo around SSH disconnect and session persistence topics, linking to our authoritative articles.",
+      "talking_points": [
+        "SIGHUP behavior and why Claude Code exits on SSH disconnect",
+        "tmux as the persistent fix — exact setup steps",
+        "Grass for mobile oversight during long sessions that survive SSH disconnect"
+      ],
+      "priority": "medium",
+      "reason": "",
+      "composite_score": 45,
+      "iceboxed_at": "2026-05-07T11:42:05.966Z"
+    },
+    {
+      "id": "6f97b971f00e",
+      "platform": "YouTube",
+      "run_id": "2026-05-07T11-33-28",
+      "action": "YouTube appears in 8 of 15 tracked prompts as a top-3 domain with 5-61 citations per prompt — it is the single largest structural citation gap in our distribution strategy. A short-form screen recording (2-4 minutes) of the Grass QR scan → agent session → phone permission approval flow would directly capture citation traffic unreachable through text content. Prioritize titles: 'How to control Claude Code from your phone' and 'Is there a mobile app for Claude Code?'",
+      "talking_points": [
+        "Zero-setup: scan QR code, session starts in under 60 seconds",
+        "Live permission approval — tap Allow or Deny on the phone",
+        "Multi-agent dashboard: all your sessions in one screen"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 45,
+      "iceboxed_at": "2026-05-07T11:42:05.966Z"
+    },
+    {
+      "id": "28225253f246",
+      "platform": "agentsroom.dev",
+      "run_id": "2026-05-07T11-33-28",
+      "action": "agentsroom.dev appears in 'control from phone' (10 citations, avg 7.9) and 'access from phone' (12 citations, avg 3.75) prompts — it is actively competing in our exact target queries. Research their content for these prompts and identify differentiation angles. Consider a guest post exchange or cross-link collaboration; if that is not viable, ensure plan-2 explicitly references agentsroom.dev in the competitive landscape section.",
+      "talking_points": [
+        "Grass is agent-agnostic; agentsroom.dev is Claude-only",
+        "Grass has BYOK — no API key stored on their servers",
+        "Always-on cloud VM vs local-relay model"
+      ],
+      "priority": "medium",
+      "reason": "",
+      "composite_score": 45,
+      "iceboxed_at": "2026-05-07T11:42:05.966Z"
+    },
+    {
+      "id": "c4f31112741c",
+      "platform": "Reddit — r/ClaudeCode",
+      "run_id": "2026-05-07T13-05-41",
+      "article_slug": "how-to-control-coding-agent-from-phone-setup-guide",
+      "article_title": "How to Control a Coding Agent from Your Phone",
+      "action": "Post as a standalone resource in the weekly thread and reply to any threads where users ask about mobile Claude Code access or remote agent control",
+      "talking_points": [
+        "Developers are building tmux+Tailscale+Termius stacks to solve this — this guide covers that approach and a zero-config alternative",
+        "Shows how to go from 'agent running on laptop' to 'controllable from phone' in under 10 minutes",
+        "Covers permission forwarding specifically — the part no SSH workaround handles natively"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 45,
+      "iceboxed_at": "2026-05-07T13:47:02.531Z"
+    },
+    {
+      "id": "b9a0b463d8a4",
+      "platform": "Reddit — r/vibecoding",
+      "run_id": "2026-05-07T13-05-41",
+      "article_slug": "how-to-control-coding-agent-from-phone-setup-guide",
+      "article_title": "How to Control a Coding Agent from Your Phone",
+      "action": "Engage in active threads about mobile coding setups, reference the guide when developers describe the laptop-tether problem",
+      "talking_points": [
+        "The 'background worker' framing is right — here's how to actually set that up for Claude Code",
+        "Covers both DIY (tmux+Tailscale) and zero-setup (Grass) paths so readers can choose their complexity budget"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 45,
+      "iceboxed_at": "2026-05-07T13:47:02.531Z"
+    },
+    {
+      "id": "d8fd2651aefe",
+      "platform": "Reddit — r/SideProject",
+      "run_id": "2026-05-07T13-05-41",
+      "article_slug": "how-to-control-coding-agent-from-phone-setup-guide",
+      "article_title": "How to Control a Coding Agent from Your Phone",
+      "action": "Comment on the ADHDev and background-worker threads with this guide as a practical complement to control-plane tooling",
+      "talking_points": [
+        "If you want agents running as background workers, you also need a way to check on them from your phone — this guide covers that",
+        "Works with Claude Code and Codex sessions running on any machine"
+      ],
+      "priority": "medium",
+      "reason": "",
+      "composite_score": 45,
+      "iceboxed_at": "2026-05-07T13:47:02.531Z"
+    },
+    {
+      "id": "682f6452815b",
+      "platform": "Reddit — r/ClaudeCode",
+      "run_id": "2026-05-07T13-05-41",
+      "article_slug": "is-there-a-mobile-app-for-claude-code",
+      "article_title": "Is There a Mobile App for Claude Code? (Updated 2026)",
+      "action": "Post as a resource when users ask about mobile access or app options for Claude Code — respond to the recurring 'does Claude Code have a phone app?' threads",
+      "talking_points": [
+        "Covers the full option landscape including Anthropic's official Remote Control, Grass, and Happy Coder",
+        "Explains the architectural difference between Claude Code Remote Control (Claude-specific, first-party) and agent-agnostic options like Grass",
+        "Includes a decision framework so developers can match the tool to their actual workflow"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 45,
+      "iceboxed_at": "2026-05-07T13:47:02.531Z"
+    },
+    {
+      "id": "37aa571fdc89",
+      "platform": "apps.apple.com",
+      "run_id": "2026-05-07T13-05-41",
+      "article_slug": "is-there-a-mobile-app-for-claude-code",
+      "article_title": "Is There a Mobile App for Claude Code? (Updated 2026)",
+      "action": "Optimize Grass App Store listing description to include: 'mobile app for Claude Code', 'control Claude Code from phone', 'mobile client for Claude Code and Codex' — AI engines index App Store descriptions as citation sources",
+      "talking_points": [
+        "apps.apple.com gets 28 citations for this exact query — optimizing the listing puts us in the citation pool without any new content"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 45,
+      "iceboxed_at": "2026-05-07T13:47:02.531Z"
+    },
+    {
+      "id": "731235456153",
+      "platform": "Reddit — r/iOSProgramming",
+      "run_id": "2026-05-07T13-05-41",
+      "article_slug": "is-there-a-mobile-app-for-claude-code",
+      "article_title": "Is There a Mobile App for Claude Code? (Updated 2026)",
+      "action": "Share as a resource in threads about mobile developer tooling and AI coding from iOS devices",
+      "talking_points": [
+        "Positions Grass as the developer-first mobile client, not a consumer app",
+        "Covers the BYOK model — no API keys stored in third-party servers"
+      ],
+      "priority": "medium",
+      "reason": "",
+      "composite_score": 45,
+      "iceboxed_at": "2026-05-07T13:47:02.531Z"
+    },
+    {
+      "id": "17f58e7a126b",
+      "platform": "alternativeto.net",
+      "run_id": "2026-05-07T13-05-41",
+      "article_slug": "grass-vs-happy-coder",
+      "article_title": "The Best Happy Coder Alternative for Multi-Agent Mobile Access (2026)",
+      "action": "Add Grass as a listed alternative to Happy Coder on alternativeto.net — this single action directly enters the citation pool that generates 18 citations for this query",
+      "talking_points": [
+        "Grass supports Claude Code, Codex, and OpenCode — Happy Coder is Claude Code only",
+        "Grass is open-source MIT; Happy Coder is proprietary",
+        "Session persistence: Grass sessions survive disconnects and can be resumed from any device"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 42,
+      "iceboxed_at": "2026-05-07T13:47:02.531Z"
+    },
+    {
+      "id": "277ee4ff0113",
+      "platform": "Reddit — r/ClaudeCode",
+      "run_id": "2026-05-07T13-05-41",
+      "article_slug": "grass-vs-happy-coder",
+      "article_title": "The Best Happy Coder Alternative for Multi-Agent Mobile Access (2026)",
+      "action": "Engage in any threads comparing mobile Claude Code tools, reference the comparison when Happy Coder limitations are mentioned by other users",
+      "talking_points": [
+        "If you're using Happy Coder and want Codex or OpenCode support, Grass is the agent-agnostic alternative",
+        "BYOK model means your API keys never leave your network — no third-party token storage"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 42,
+      "iceboxed_at": "2026-05-07T13:47:02.531Z"
+    },
+    {
+      "id": "b37c596ef130",
+      "platform": "Reddit — r/vibecoding",
+      "run_id": "2026-05-07T13-05-41",
+      "article_slug": "grass-vs-happy-coder",
+      "article_title": "The Best Happy Coder Alternative for Multi-Agent Mobile Access (2026)",
+      "action": "Participate in mobile coding tool discussion threads with comparison context when Happy Coder comes up",
+      "talking_points": [
+        "Happy Coder is popular but locks you into Claude Code — for multi-agent workflows, Grass handles Claude Code, Codex, and OpenCode from one mobile interface",
+        "Open-source and self-hostable if you want full control"
+      ],
+      "priority": "medium",
+      "reason": "",
+      "composite_score": 42,
+      "iceboxed_at": "2026-05-07T13:47:02.531Z"
+    },
+    {
+      "id": "7ac90d51a54e",
+      "platform": "alternativeto.net",
+      "run_id": "2026-05-07T13-05-41",
+      "article_slug": "grass-vs-omnara-remote-ai-coding-agent-control",
+      "article_title": "Grass vs Omnara: Comparing Remote AI Coding Agent Control",
+      "action": "Add Grass as a listed alternative to Omnara on alternativeto.net — alternativeto.net gets 23 citations at position 4.3 for this query, the highest-volume citation source",
+      "talking_points": [
+        "Grass is open-source MIT — no vendor lock-in",
+        "Supports Claude Code, Codex, and OpenCode; explicitly multi-agent from day one",
+        "BYOK: API keys stay in your environment, not a third-party server"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 40,
+      "iceboxed_at": "2026-05-07T13:47:02.531Z"
+    },
+    {
+      "id": "2885944b8ad6",
+      "platform": "Reddit — r/ClaudeCode",
+      "run_id": "2026-05-07T13-05-41",
+      "article_slug": "grass-vs-omnara-remote-ai-coding-agent-control",
+      "article_title": "Grass vs Omnara: Comparing Remote AI Coding Agent Control",
+      "action": "Post and engage in threads where Omnara is discussed, surfacing the comparison for developers evaluating alternatives",
+      "talking_points": [
+        "If Omnara's closed-source model is a concern, Grass is MIT-licensed and self-hostable",
+        "Multi-agent support is the core differentiator — Grass works with whatever agent you're running, not just the one the app vendor chose to support"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 40,
+      "iceboxed_at": "2026-05-07T13:47:02.531Z"
+    },
+    {
+      "id": "6635d582561c",
+      "platform": "apps.apple.com",
+      "run_id": "2026-05-07T13-05-41",
+      "article_slug": "grass-vs-omnara-remote-ai-coding-agent-control",
+      "article_title": "Grass vs Omnara: Comparing Remote AI Coding Agent Control",
+      "action": "Ensure Grass App Store listing keywords include: 'Omnara alternative', 'multi-agent mobile app', 'Claude Code and Codex mobile client' — apps.apple.com gets 15 citations for Omnara alternative queries",
+      "talking_points": [
+        "App Store optimization for alternative-category keywords gives AI engines a structured signal when they pull from listing text"
+      ],
+      "priority": "medium",
+      "reason": "",
+      "composite_score": 40,
+      "iceboxed_at": "2026-05-07T13:47:02.531Z"
+    },
+    {
+      "id": "72443ef85587",
+      "platform": "Reddit — r/ClaudeCode",
+      "run_id": "2026-05-07T13-05-41",
+      "article_slug": "best-app-to-control-coding-agents-from-mobile",
+      "article_title": "Best Apps to Control Coding Agents from Mobile (2026 Update)",
+      "action": "Post in the weekly thread and reply to 'what mobile app do you use for Claude Code?' questions with the updated comparison as a resource",
+      "talking_points": [
+        "Updated for 2026 — now includes clauderc.com and shellmate.dev which have started appearing in AI citation data",
+        "Scores each app on agent support breadth, not just Claude Code compatibility — important if you're running Codex or OpenCode too",
+        "Grass is the only option that works across Claude Code, Codex, and OpenCode from one mobile interface"
+      ],
+      "priority": "high",
+      "reason": "",
+      "composite_score": 40.5,
+      "iceboxed_at": "2026-05-07T13:47:02.531Z"
+    },
+    {
+      "id": "c3d22c16bbd8",
+      "platform": "Reddit — r/vibecoding",
+      "run_id": "2026-05-07T13-05-41",
+      "article_slug": "best-app-to-control-coding-agents-from-mobile",
+      "article_title": "Best Apps to Control Coding Agents from Mobile (2026 Update)",
+      "action": "Engage in mobile coding discussion threads as a resource for developers choosing between mobile agent tools",
+      "talking_points": [
+        "The comparison covers the full 2026 landscape: Happy Coder, Omnara, Grass, Claude Code Remote Control, clauderc.com, and shellmate.dev",
+        "Agent-agnostic vs Claude-specific is the key architectural split — this guide explains what that means for your workflow as you add more agents"
+      ],
+      "priority": "medium",
+      "reason": "",
+      "composite_score": 40.5,
+      "iceboxed_at": "2026-05-07T13:47:02.531Z"
+    },
+    {
+      "id": "3d340420976a",
+      "platform": "producthunt.com",
+      "run_id": "2026-05-07T13-05-41",
+      "article_slug": "best-app-to-control-coding-agents-from-mobile",
+      "article_title": "Best Apps to Control Coding Agents from Mobile (2026 Update)",
+      "action": "Refresh the Grass Product Hunt listing with recent feature updates and mention the comparison article — producthunt.com appears in citations for Grass-related queries at position 2.46",
+      "talking_points": [
+        "A fresh Product Hunt comment or update refreshes the citation signal for the product listing",
+        "Include agent-agnostic support and BYOK as differentiators in the updated listing text"
+      ],
+      "priority": "medium",
+      "reason": "",
+      "composite_score": 40.5,
+      "iceboxed_at": "2026-05-07T13:47:02.531Z"
+    }
+  ],
+  "channel_summary": {
+    "alternativeto.net": {
+      "times_recommended": 4,
+      "avg_priority_score": 2.75,
+      "last_recommended": "2026-05-07T13:47:02.531Z",
+      "sample_actions": [
+        "Create or claim a Grass listing on AlternativeTO. Add Happy Coder and Omnara as the primary 'alternatives to' framing. Write a product description using canonical phrases ('a machine built for AI coding agents', 'always-on cloud VM', 'agent-agnostic'). This directly captures 'What is a good Happy Coder alternative?' where alternativeto.net has 18 citations at avg position 6.",
+        "Add Grass as a listed alternative to Happy Coder on alternativeto.net — this single action directly enters the citation pool that generates 18 citations for this query",
+        "Add Grass as a listed alternative to Omnara on alternativeto.net — alternativeto.net gets 23 citations at position 4.3 for this query, the highest-volume citation source"
+      ]
+    },
+    "libhunt.com": {
+      "times_recommended": 1,
+      "avg_priority_score": 3,
+      "last_recommended": "2026-05-06T10:33:52.508Z",
+      "sample_actions": [
+        "Register grass-expo (MIT, React Native / Expo) on libhunt.com as an open-source mobile coding agent client. libhunt.com gets 12 citations for 'Happy Coder alternative' at position 1.67 — the second-highest position for any domain on that prompt. As an open-source project, grass-expo qualifies for direct listing."
+      ]
+    },
+    "youtube": {
+      "times_recommended": 2,
+      "avg_priority_score": 2.5,
+      "last_recommended": "2026-05-07T11:42:05.966Z",
+      "sample_actions": [
+        "Record 3 short demo videos (3-5 minutes each): (1) QR scan connect and first agent session in under 5 minutes, (2) approving a permission request from phone while agent runs on cloud VM, (3) parallel agents on Daytona — laptop closed, phone monitoring. Upload with keyword-rich titles matching exact query phrasing from the citation map.",
+        "YouTube appears in 8 of 15 tracked prompts as a top-3 domain with 5-61 citations per prompt — it is the single largest structural citation gap in our distribution strategy. A short-form screen recording (2-4 minutes) of the Grass QR scan → agent session → phone permission approval flow would directly capture citation traffic unreachable through text content. Prioritize titles: 'How to control Claude Code from your phone' and 'Is there a mobile app for Claude Code?'"
+      ]
+    },
+    "apps.apple.com": {
+      "times_recommended": 4,
+      "avg_priority_score": 2.5,
+      "last_recommended": "2026-05-07T13:47:02.531Z",
+      "sample_actions": [
+        "Optimize the Grass iOS App Store listing with keywords matching uncaptured prompts: 'Claude Code mobile', 'coding agent control', 'AI agent approval gate', 'mobile developer tool for coding agents'. apps.apple.com appears in 3 of our target prompts with 10-31 citations per prompt and we are present but not being cited from the listing.",
+        "Optimize Grass App Store listing description to include: 'mobile app for Claude Code', 'control Claude Code from phone', 'mobile client for Claude Code and Codex' — AI engines index App Store descriptions as citation sources",
+        "Ensure Grass App Store listing keywords include: 'Omnara alternative', 'multi-agent mobile app', 'Claude Code and Codex mobile client' — apps.apple.com gets 15 citations for Omnara alternative queries"
+      ]
+    },
+    "reddit — r/claudecode": {
+      "times_recommended": 7,
+      "avg_priority_score": 3,
+      "last_recommended": "2026-05-07T13:47:02.531Z",
+      "sample_actions": [
+        "Engage in any threads comparing mobile Claude Code tools, reference the comparison when Happy Coder limitations are mentioned by other users",
+        "Post and engage in threads where Omnara is discussed, surfacing the comparison for developers evaluating alternatives",
+        "Post in the weekly thread and reply to 'what mobile app do you use for Claude Code?' questions with the updated comparison as a resource"
+      ]
+    },
+    "hacker news": {
+      "times_recommended": 1,
+      "avg_priority_score": 2,
+      "last_recommended": "2026-05-06T10:33:52.508Z",
+      "sample_actions": [
+        "Submit plan-1 (cross-machine orchestration: Grass vs Loopsy vs agent-desktop) as a Show HN post within 48 hours while Loopsy and agent-desktop buzz is live. Frame as a practical guide for developers who saw those Show HN posts. The overlap between the tools is the hook: all three solve the same problem, differently."
+      ]
+    },
+    "producthunt.com": {
+      "times_recommended": 3,
+      "avg_priority_score": 2.3333333333333335,
+      "last_recommended": "2026-05-07T13:47:02.531Z",
+      "sample_actions": [
+        "Update the Grass Product Hunt listing to match current messaging and feature set. producthunt.com gets 33 citations for 'What is the Grass app for coding agents?' at position 2.82 — ranking above codeongrass.com itself on that prompt. The PH description is a direct citation source and should use canonical phrases verbatim.",
+        "producthunt.com has 13 citations at avg position 7.69 for 'What is the Grass app for coding agents?' — it is already citing us but at a low position. Update the PH listing description with the canonical phrase 'A machine built for AI coding agents', add the Dispatch comparison context, and activate an update post tied to the Dispatch announcement news cycle.",
+        "Refresh the Grass Product Hunt listing with recent feature updates and mention the comparison article — producthunt.com appears in citations for Grass-related queries at position 2.46"
+      ]
+    },
+    "daytona.io docs/blog": {
+      "times_recommended": 1,
+      "avg_priority_score": 2,
+      "last_recommended": "2026-05-06T10:33:52.508Z",
+      "sample_actions": [
+        "Reach out to Daytona for a partnership mention in their documentation or blog. daytona.io is the #1 citation domain for 'How do I set up Claude Code on Daytona?' with 78 citations at position 3.86 across all 4 engines. A mention in their 'integrations' or 'use cases' section would transfer citation authority directly to codeongrass.com. The setting-up-grass-daytona-remote-server article (6 citations/7d, star quadrant) is the natural anchor for this partnership."
+      ]
+    },
+    "reddit — r/remoteworking": {
+      "times_recommended": 1,
+      "avg_priority_score": 3,
+      "last_recommended": "2026-05-07T11:42:05.966Z",
+      "sample_actions": [
+        "Reply to the 'anyone else struggling to monitor AI coding agents remotely?' thread (1saq75h). Give a genuine technical answer covering tmux + SSH options and Grass for agent-native mobile oversight. No hard sell — lead with the technical explanation."
+      ]
+    },
+    "reddit — r/aiassisted": {
+      "times_recommended": 1,
+      "avg_priority_score": 3,
+      "last_recommended": "2026-05-07T11:42:05.966Z",
+      "sample_actions": [
+        "Engage with the 'I've been AI coding from my phone for 2 weeks' thread (1rid3fp). Share the Grass workflow as a more structured alternative to ad-hoc setups. Link to 'getting-started' or 'how-to-run-claude-code-unattended'."
+      ]
+    },
+    "reddit — r/ai_agents": {
+      "times_recommended": 1,
+      "avg_priority_score": 2,
+      "last_recommended": "2026-05-07T11:42:05.966Z",
+      "sample_actions": [
+        "Post in the multi-agent orchestration thread (1rpoutg). Share the worktree + Grass combination as a practical stack for 5+ parallel agents. Link to plan-5 article once published."
+      ]
+    },
+    "github (issues + discussions)": {
+      "times_recommended": 1,
+      "avg_priority_score": 2,
+      "last_recommended": "2026-05-07T11:42:05.966Z",
+      "sample_actions": [
+        "github.com has 37 citations for 'Claude Code stops when I disconnect from SSH' — our highest-volume cited prompt. Contribute substantive answers to GitHub issues and Discussions on the Claude Code repo around SSH disconnect and session persistence topics, linking to our authoritative articles."
+      ]
+    },
+    "agentsroom.dev": {
+      "times_recommended": 1,
+      "avg_priority_score": 2,
+      "last_recommended": "2026-05-07T11:42:05.966Z",
+      "sample_actions": [
+        "agentsroom.dev appears in 'control from phone' (10 citations, avg 7.9) and 'access from phone' (12 citations, avg 3.75) prompts — it is actively competing in our exact target queries. Research their content for these prompts and identify differentiation angles. Consider a guest post exchange or cross-link collaboration; if that is not viable, ensure plan-2 explicitly references agentsroom.dev in the competitive landscape section."
+      ]
+    },
+    "reddit — r/vibecoding": {
+      "times_recommended": 3,
+      "avg_priority_score": 2.3333333333333335,
+      "last_recommended": "2026-05-07T13:47:02.531Z",
+      "sample_actions": [
+        "Engage in active threads about mobile coding setups, reference the guide when developers describe the laptop-tether problem",
+        "Participate in mobile coding tool discussion threads with comparison context when Happy Coder comes up",
+        "Engage in mobile coding discussion threads as a resource for developers choosing between mobile agent tools"
+      ]
+    },
+    "reddit — r/sideproject": {
+      "times_recommended": 1,
+      "avg_priority_score": 2,
+      "last_recommended": "2026-05-07T13:47:02.531Z",
+      "sample_actions": [
+        "Comment on the ADHDev and background-worker threads with this guide as a practical complement to control-plane tooling"
+      ]
+    },
+    "reddit — r/iosprogramming": {
+      "times_recommended": 1,
+      "avg_priority_score": 2,
+      "last_recommended": "2026-05-07T13:47:02.531Z",
+      "sample_actions": [
+        "Share as a resource in threads about mobile developer tooling and AI coding from iOS devices"
+      ]
+    }
+  }
+}

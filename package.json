@@ -10,11 +10,19 @@
     "proposals": "tsx src/cli/proposals.ts",
     "versions": "tsx src/cli/versions.ts",
     "insights": "tsx src/cli/insights.ts",
+    "sync": "tsx src/cli/sync.ts",
+    "sync:articles": "tsx src/sync/sync-articles.ts",
+    "webhook": "tsx src/webhook-server.ts",
+    "syndicate": "tsx src/cli/syndicate.ts",
+    "llms-txt": "tsx src/sync/generate-llms-txt.ts",
+    "nightly": "tsx scripts/nightly.ts",
     "build": "tsc --noEmit"
   },
   "dependencies": {
     "better-sqlite3": "^11.7.0",
     "dotenv": "^16.4.7",
+    "parallel-web": "^0.4.1",
+    "resend": "^6.12.3",
     "zod": "^3.24.2"
   },
   "devDependencies": {
